@@ -1,0 +1,114 @@
+[
+  {
+    "id": "1",
+    "name": "10th Mark Sheet",
+    "description": "Class 10 board examination mark sheet",
+    "required": true,
+    "category": "Academic",
+    "status": "verified",
+    "deadline": "2024-07-15",
+    "format": "PDF, JPG",
+    "size_limit": "2MB",
+    "sample_link": "/samples/10th-marksheet.pdf"
+  },
+  {
+    "id": "2",
+    "name": "12th Mark Sheet",
+    "description": "Class 12 board examination mark sheet",
+    "required": true,
+    "category": "Academic",
+    "status": "verified",
+    "deadline": "2024-07-15",
+    "format": "PDF, JPG",
+    "size_limit": "2MB"
+  },
+  {
+    "id": "3",
+    "name": "JEE Main Admit Card",
+    "description": "JEE Main 2024 admit card",
+    "required": true,
+    "category": "Academic",
+    "status": "uploaded",
+    "deadline": "2024-07-15",
+    "format": "PDF",
+    "size_limit": "1MB"
+  },
+  {
+    "id": "4",
+    "name": "JEE Main Score Card",
+    "description": "JEE Main 2024 result/score card",
+    "required": true,
+    "category": "Academic",
+    "status": "pending",
+    "deadline": "2024-07-20",
+    "format": "PDF",
+    "size_limit": "1MB"
+  },
+  {
+    "id": "5",
+    "name": "Aadhaar Card",
+    "description": "Aadhaar card for identity verification",
+    "required": true,
+    "category": "Identity",
+    "status": "verified",
+    "deadline": "2024-07-15",
+    "format": "PDF, JPG",
+    "size_limit": "1MB"
+  },
+  {
+    "id": "6",
+    "name": "OBC Certificate",
+    "description": "Non-creamy layer OBC certificate (if applicable)",
+    "required": false,
+    "category": "Category Certificate",
+    "status": "pending",
+    "deadline": "2024-07-25",
+    "format": "PDF",
+    "size_limit": "2MB",
+    "sample_link": "/samples/obc-certificate.pdf"
+  },
+  {
+    "id": "7",
+    "name": "EWS Certificate",
+    "description": "Economically Weaker Section certificate (if applicable)",
+    "required": false,
+    "category": "Category Certificate",
+    "status": "pending",
+    "deadline": "2024-07-25",
+    "format": "PDF",
+    "size_limit": "2MB"
+  },
+  {
+    "id": "8",
+    "name": "Income Certificate",
+    "description": "Family income certificate",
+    "required": false,
+    "category": "Income Certificate",
+    "status": "pending",
+    "deadline": "2024-07-30",
+    "format": "PDF",
+    "size_limit": "2MB"
+  },
+  {
+    "id": "9",
+    "name": "Transfer Certificate",
+    "description": "School transfer certificate",
+    "required": true,
+    "category": "Academic",
+    "status": "pending",
+    "deadline": "2024-08-01",
+    "format": "PDF, JPG",
+    "size_limit": "2MB"
+  },
+  {
+    "id": "10",
+    "name": "Character Certificate",
+    "description": "Character certificate from school",
+    "required": true,
+    "category": "Academic",
+    "status": "pending",
+    "deadline": "2024-08-01",
+    "format": "PDF, JPG",
+    "size_limit": "2MB"
+  }
+]

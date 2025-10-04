@@ -1,0 +1,130 @@
+[
+  {
+    "id": "1",
+    "name": "IIT Delhi",
+    "location": "New Delhi",
+    "type": "Government",
+    "rating": 4.8,
+    "campusVideo": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "virtualTour": "https://iitd.ac.in/virtual-tour",
+    "officialWebsite": "https://home.iitd.ac.in/",
+    "departmentLinks": [
+      {
+        "name": "Computer Science & Engineering",
+        "url": "https://cse.iitd.ac.in/"
+      },
+      {
+        "name": "Electrical Engineering",
+        "url": "https://ee.iitd.ac.in/"
+      },
+      {
+        "name": "Mechanical Engineering",
+        "url": "https://mech.iitd.ac.in/"
+      },
+      {
+        "name": "Civil Engineering",
+        "url": "https://civil.iitd.ac.in/"
+      }
+    ],
+    "alumniProfiles": [
+      {
+        "name": "Sundar Pichai",
+        "position": "CEO",
+        "company": "Google",
+        "linkedinUrl": "https://linkedin.com/in/sundarpichai",
+        "graduationYear": "1993"
+      },
+      {
+        "name": "Vinod Khosla",
+        "position": "Co-founder",
+        "company": "Sun Microsystems",
+        "linkedinUrl": "https://linkedin.com/in/vinodkhosla",
+        "graduationYear": "1976"
+      },
+      {
+        "name": "Rajeev Suri",
+        "position": "Former CEO",
+        "company": "Nokia",
+        "linkedinUrl": "https://linkedin.com/in/rajeevsuri",
+        "graduationYear": "1989"
+      }
+    ],
+    "socialMedia": {
+      "youtube": "https://youtube.com/c/IITDelhi",
+      "instagram": "https://instagram.com/iitdelhi",
+      "facebook": "https://facebook.com/IITDelhi"
+    },
+    "highlights": [
+      "Ranked #2 in NIRF Engineering Rankings 2023",
+      "Average Package: ₹17.5 LPA",
+      "100% Placement Rate",
+      "Strong Industry Partnerships"
+    ],
+    "admissionBrochure": "/brochures/iit-delhi-2024.pdf",
+    "placementReport": "/reports/iit-delhi-placement-2023.pdf"
+  },
+  {
+    "id": "2",
+    "name": "BITS Pilani",
+    "location": "Pilani, Rajasthan",
+    "type": "Private",
+    "rating": 4.7,
+    "campusVideo": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "virtualTour": "https://bits-pilani.ac.in/virtual-tour",
+    "officialWebsite": "https://www.bits-pilani.ac.in/",
+    "departmentLinks": [
+      {
+        "name": "Computer Science & Information Systems",
+        "url": "https://bits-pilani.ac.in/csis"
+      },
+      {
+        "name": "Electronics & Communication",
+        "url": "https://bits-pilani.ac.in/ece"
+      },
+      {
+        "name": "Mechanical Engineering",
+        "url": "https://bits-pilani.ac.in/mech"
+      },
+      {
+        "name": "Chemical Engineering",
+        "url": "https://bits-pilani.ac.in/chemical"
+      }
+    ],
+    "alumniProfiles": [
+      {
+        "name": "Sachin Bansal",
+        "position": "Co-founder",
+        "company": "Flipkart",
+        "linkedinUrl": "https://linkedin.com/in/sachinbansal",
+        "graduationYear": "2005"
+      },
+      {
+        "name": "Binny Bansal",
+        "position": "Co-founder",
+        "company": "Flipkart",
+        "linkedinUrl": "https://linkedin.com/in/binnybansal",
+        "graduationYear": "2005"
+      },
+      {
+        "name": "Bhavish Aggarwal",
+        "position": "Co-founder & CEO",
+        "company": "Ola",
+        "linkedinUrl": "https://linkedin.com/in/bhavishaggarwal",
+        "graduationYear": "2008"
+      }
+    ],
+    "socialMedia": {
+      "youtube": "https://youtube.com/c/BITSPilani",
+      "instagram": "https://instagram.com/bitspilani",
+      "facebook": "https://facebook.com/BITSPilani"
+    },
+    "highlights": [
+      "Ranked #25 in NIRF Engineering Rankings 2023",
+      "Average Package: ₹15.2 LPA",
+      "No Reservation Policy",
+      "Strong Entrepreneurship Culture"
+    ],
+    "admissionBrochure": "/brochures/bits-pilani-2024.pdf",
+    "placementReport": "/reports/bits-pilani-placement-2023.pdf"
+  }
+]

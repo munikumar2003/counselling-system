@@ -1,0 +1,30 @@
+{
+  "JEE Main": [
+    { "subject": "Physics", "weightage": 33.3, "difficulty": 7.5, "trend": "increasing", "questions": 25, "marks": 100 },
+    { "subject": "Chemistry", "weightage": 33.3, "difficulty": 6.8, "trend": "stable", "questions": 25, "marks": 100 },
+    { "subject": "Mathematics", "weightage": 33.3, "difficulty": 8.2, "trend": "increasing", "questions": 25, "marks": 100 }
+  ],
+  "NEET": [
+    { "subject": "Physics", "weightage": 25, "difficulty": 7.8, "trend": "increasing", "questions": 45, "marks": 180 },
+    { "subject": "Chemistry", "weightage": 25, "difficulty": 6.5, "trend": "stable", "questions": 45, "marks": 180 },
+    { "subject": "Botany", "weightage": 25, "difficulty": 6.2, "trend": "decreasing", "questions": 45, "marks": 180 },
+    { "subject": "Zoology", "weightage": 25, "difficulty": 6.8, "trend": "stable", "questions": 45, "marks": 180 }
+  ],
+  "GATE CSE": [
+    { "subject": "Programming", "weightage": 15, "difficulty": 8.0, "trend": "increasing", "questions": 11, "marks": 22 },
+    { "subject": "Data Structures", "weightage": 13, "difficulty": 7.5, "trend": "stable", "questions": 9, "marks": 18 },
+    { "subject": "Algorithms", "weightage": 13, "difficulty": 8.5, "trend": "increasing", "questions": 9, "marks": 18 },
+    { "subject": "Computer Networks", "weightage": 12, "difficulty": 7.0, "trend": "stable", "questions": 8, "marks": 16 },
+    { "subject": "Operating Systems", "weightage": 10, "difficulty": 6.8, "trend": "decreasing", "questions": 7, "marks": 14 },
+    { "subject": "Database Systems", "weightage": 10, "difficulty": 7.2, "trend": "stable", "questions": 7, "marks": 14 },
+    { "subject": "Theory of Computation", "weightage": 8, "difficulty": 8.8, "trend": "increasing", "questions": 6, "marks": 12 },
+    { "subject": "Compiler Design", "weightage": 7, "difficulty": 8.2, "trend": "stable", "questions": 5, "marks": 10 },
+    { "subject": "Digital Logic", "weightage": 6, "difficulty": 6.5, "trend": "decreasing", "questions": 4, "marks": 8 },
+    { "subject": "Computer Architecture", "weightage": 6, "difficulty": 7.0, "trend": "stable", "questions": 4, "marks": 8 }
+  ],
+  "CAT": [
+    { "subject": "Quantitative Ability", "weightage": 33.3, "difficulty": 7.8, "trend": "increasing", "questions": 22, "marks": 66 },
+    { "subject": "Verbal Ability", "weightage": 33.3, "difficulty": 7.2, "trend": "stable", "questions": 24, "marks": 72 },
+    { "subject": "Data Interpretation", "weightage": 33.3, "difficulty": 8.0, "trend": "increasing", "questions": 20, "marks": 60 }
+  ]
+}

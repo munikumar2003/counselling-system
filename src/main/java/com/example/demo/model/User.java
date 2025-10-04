@@ -1,13 +1,14 @@
-
 package com.example.demo.model;
 
 public class User {
     private String firstName;
-    private String lastName;
+    private String registrationNumber;
+    private boolean profileComplete;
+    private String paymentStatus;
     private String email;
-    private String phone;
     private String password;
 
+    // Getters and Setters
     public String getFirstName() {
         return firstName;
     }
@@ -16,12 +17,28 @@ public class User {
         this.firstName = firstName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getRegistrationNumber() {
+        return registrationNumber;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
+    }
+
+    public boolean isProfileComplete() {
+        return profileComplete;
+    }
+
+    public void setProfileComplete(boolean profileComplete) {
+        this.profileComplete = profileComplete;
+    }
+
+    public String getPaymentStatus() {
+        return paymentStatus;
+    }
+
+    public void setPaymentStatus(String paymentStatus) {
+        this.paymentStatus = paymentStatus;
     }
 
     public String getEmail() {
@@ -32,14 +49,6 @@ public class User {
         this.email = email;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -48,13 +57,4 @@ public class User {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-            "firstName='" + firstName + "'," +
-            " lastName='" + lastName + "'," +
-            " email='" + email + "'," +
-            " phone='" + phone + "'" +
-            '}';
-    }
 }
