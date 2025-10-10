@@ -1,10 +1,27 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.List;
 
+@Entity
+@Table(name = "reviews")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Review {
-    private String id;
-    private String college;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String branch;
     private String student_name;
     private String batch;
@@ -13,27 +30,29 @@ public class Review {
     private double faculty_rating;
     private double campus_rating;
     private String review_text;
-    private List<String> pros;
-    private List<String> cons;
     private boolean verified;
     private int helpful_count;
     private String date;
 
+    @ElementCollection
+    private List<String> pros;
+
+    @ElementCollection
+    private List<String> cons;
+
+    @JsonProperty("college")
+    private String collegeId;
+
+    @Transient
+    private College college;
+
     // Getters and Setters
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getCollege() {
-        return college;
-    }
-
-    public void setCollege(String college) {
-        this.college = college;
     }
 
     public String getBranch() {
@@ -100,22 +119,6 @@ public class Review {
         this.review_text = review_text;
     }
 
-    public List<String> getPros() {
-        return pros;
-    }
-
-    public void setPros(List<String> pros) {
-        this.pros = pros;
-    }
-
-    public List<String> getCons() {
-        return cons;
-    }
-
-    public void setCons(List<String> cons) {
-        this.cons = cons;
-    }
-
     public boolean isVerified() {
         return verified;
     }
@@ -139,4 +142,37 @@ public class Review {
     public void setDate(String date) {
         this.date = date;
     }
-}
+
+    public String getCollegeId() {
+        return collegeId;
+    }
+
+    public void setCollegeId(String collegeId) {
+        this.collegeId = collegeId;
+    }
+
+    @JsonIgnore
+    public College getCollege() {
+        return college;
+    }
+
+    public void setCollege(College college) {
+        this.college = college;
+    }
+
+    public List<String> getPros() {
+        return pros;
+    }
+
+    public void setPros(List<String> pros) {
+        this.pros = pros;
+    }
+
+    public List<String> getCons() {
+        return cons;
+    }
+
+    public void setCons(List<String> cons) {
+        this.cons = cons;
+    }
+} 

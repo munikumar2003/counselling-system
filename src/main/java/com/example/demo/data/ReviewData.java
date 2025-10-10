@@ -1,5 +1,6 @@
 package com.example.demo.data;
 
+import com.example.demo.model.College;
 import com.example.demo.model.Review;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,7 +14,12 @@ import java.util.List;
 @Component
 public class ReviewData {
 
+    private final CollegeData collegeData;
     private List<Review> reviews;
+
+    public ReviewData(CollegeData collegeData) {
+        this.collegeData = collegeData;
+    }
 
     @PostConstruct
     public void init() {
@@ -22,6 +28,10 @@ public class ReviewData {
         InputStream inputStream = TypeReference.class.getResourceAsStream("/reviews.json");
         try {
             reviews = mapper.readValue(inputStream, typeReference);
+            for (Review review : reviews) {
+                College college = collegeData.findCollegeById(review.getCollegeId());
+                review.setCollege(college);
+            }
         } catch (IOException e) {
             System.out.println("Unable to read reviews: " + e.getMessage());
         }

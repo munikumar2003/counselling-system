@@ -1,77 +1,79 @@
-[
-  {
-    "id": "1",
-    "name": "IIT Delhi",
-    "location": "New Delhi",
-    "type": "Government",
-    "nirf_rank": 2,
-    "fees": 200000,
-    "branches": ["Computer Science", "Electrical", "Mechanical"],
-    "cutoffs": {
-      "jee_main": { "General": 99.5, "OBC": 99.0, "SC": 95.0, "ST": 90.0, "EWS": 99.2 },
-      "mht_cet": { "General": 99.8, "OBC": 99.3, "SC": 96.0, "ST": 92.0, "EWS": 99.5 }
+{
+  "colleges": [
+    {
+      "id": "1",
+      "name": "IIT Delhi",
+      "location": "New Delhi",
+      "type": "Government",
+      "nirf_rank": 2,
+      "fees": 200000,
+      "branches": ["Computer Science", "Electrical", "Mechanical"],
+      "cutoffs": {
+        "jee_main": { "General": 99.5, "OBC": 99.0, "SC": 95.0, "ST": 90.0, "EWS": 99.2 },
+        "mht_cet": { "General": 99.8, "OBC": 99.3, "SC": 96.0, "ST": 92.0, "EWS": 99.5 }
+      },
+      "rating": 4.8,
+      "highlights": ["Top Placements", "Research Excellence", "World-class Faculty"]
     },
-    "rating": 4.8,
-    "highlights": ["Top Placements", "Research Excellence", "World-class Faculty"]
-  },
-  {
-    "id": "2",
-    "name": "COEP Pune",
-    "location": "Pune, Maharashtra",
-    "type": "Government",
-    "nirf_rank": 45,
-    "fees": 150000,
-    "branches": ["Computer Science", "IT", "Mechanical", "Civil"],
-    "cutoffs": {
-      "jee_main": { "General": 95.0, "OBC": 92.0, "SC": 85.0, "ST": 80.0, "EWS": 94.0 },
-      "mht_cet": { "General": 99.2, "OBC": 98.5, "SC": 95.0, "ST": 90.0, "EWS": 98.8 }
+    {
+      "id": "2",
+      "name": "COEP Pune",
+      "location": "Pune, Maharashtra",
+      "type": "Government",
+      "nirf_rank": 45,
+      "fees": 150000,
+      "branches": ["Computer Science", "IT", "Mechanical", "Civil"],
+      "cutoffs": {
+        "jee_main": { "General": 95.0, "OBC": 92.0, "SC": 85.0, "ST": 80.0, "EWS": 94.0 },
+        "mht_cet": { "General": 99.2, "OBC": 98.5, "SC": 95.0, "ST": 90.0, "EWS": 98.8 }
+      },
+      "rating": 4.5,
+      "highlights": ["Strong Alumni Network", "Industry Connections", "Good Campus"]
     },
-    "rating": 4.5,
-    "highlights": ["Strong Alumni Network", "Industry Connections", "Good Campus"]
-  },
-  {
-    "id": "3",
-    "name": "VJTI Mumbai",
-    "location": "Mumbai, Maharashtra",
-    "type": "Government",
-    "nirf_rank": 52,
-    "fees": 120000,
-    "branches": ["Computer Science", "Electronics", "Mechanical"],
-    "cutoffs": {
-      "jee_main": { "General": 94.0, "OBC": 91.0, "SC": 83.0, "ST": 78.0, "EWS": 93.0 },
-      "mht_cet": { "General": 98.8, "OBC": 98.0, "SC": 94.0, "ST": 88.0, "EWS": 98.5 }
+    {
+      "id": "3",
+      "name": "VJTI Mumbai",
+      "location": "Mumbai, Maharashtra",
+      "type": "Government",
+      "nirf_rank": 52,
+      "fees": 120000,
+      "branches": ["Computer Science", "Electronics", "Mechanical"],
+      "cutoffs": {
+        "jee_main": { "General": 94.0, "OBC": 91.0, "SC": 83.0, "ST": 78.0, "EWS": 93.0 },
+        "mht_cet": { "General": 98.8, "OBC": 98.0, "SC": 94.0, "ST": 88.0, "EWS": 98.5 }
+      },
+      "rating": 4.4,
+      "highlights": ["Mumbai Location", "Industry Exposure", "Good Placements"]
     },
-    "rating": 4.4,
-    "highlights": ["Mumbai Location", "Industry Exposure", "Good Placements"]
-  },
-  {
-    "id": "4",
-    "name": "BITS Pilani",
-    "location": "Pilani, Rajasthan",
-    "type": "Private",
-    "nirf_rank": 25,
-    "fees": 450000,
-    "branches": ["Computer Science", "Electronics", "Mechanical", "Chemical"],
-    "cutoffs": {
-      "bitsat": { "General": 350, "OBC": 340, "SC": 320, "ST": 310, "EWS": 345 },
-      "jee_main": { "General": 97.0, "OBC": 95.0, "SC": 88.0, "ST": 85.0, "EWS": 96.5 }
+    {
+      "id": "4",
+      "name": "BITS Pilani",
+      "location": "Pilani, Rajasthan",
+      "type": "Private",
+      "nirf_rank": 25,
+      "fees": 450000,
+      "branches": ["Computer Science", "Electronics", "Mechanical", "Chemical"],
+      "cutoffs": {
+        "bitsat": { "General": 350, "OBC": 340, "SC": 320, "ST": 310, "EWS": 345 },
+        "jee_main": { "General": 97.0, "OBC": 95.0, "SC": 88.0, "ST": 85.0, "EWS": 96.5 }
+      },
+      "rating": 4.7,
+      "highlights": ["No Reservation", "Excellent Placements", "Industry Partnerships"]
     },
-    "rating": 4.7,
-    "highlights": ["No Reservation", "Excellent Placements", "Industry Partnerships"]
-  },
-  {
-    "id": "5",
-    "name": "VIT Vellore",
-    "location": "Vellore, Tamil Nadu",
-    "type": "Private",
-    "nirf_rank": 15,
-    "fees": 400000,
-    "branches": ["Computer Science", "IT", "Electronics", "Mechanical"],
-    "cutoffs": {
-      "viteee": { "General": 50000, "OBC": 60000, "SC": 80000, "ST": 90000, "EWS": 55000 },
-      "jee_main": { "General": 92.0, "OBC": 89.0, "SC": 82.0, "ST": 78.0, "EWS": 91.0 }
-    },
-    "rating": 4.3,
-    "highlights": ["International Exposure", "Modern Infrastructure", "Research Focus"]
-  }
-]
+    {
+      "id": "5",
+      "name": "VIT Vellore",
+      "location": "Vellore, Tamil Nadu",
+      "type": "Private",
+      "nirf_rank": 15,
+      "fees": 400000,
+      "branches": ["Computer Science", "IT", "Electronics", "Mechanical"],
+      "cutoffs": {
+        "viteee": { "General": 50000, "OBC": 60000, "SC": 80000, "ST": 90000, "EWS": 55000 },
+        "jee_main": { "General": 92.0, "OBC": 89.0, "SC": 82.0, "ST": 78.0, "EWS": 91.0 }
+      },
+      "rating": 4.3,
+      "highlights": ["International Exposure", "Modern Infrastructure", "Research Focus"]
+    }
+  ]
+}

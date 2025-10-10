@@ -1,6 +1,26 @@
 package com.example.demo.model;
 
+import java.util.List;
+import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "users")
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String firstName;
     private String registrationNumber;
     private boolean profileComplete;
@@ -8,7 +28,29 @@ public class User {
     private String email;
     private String password;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_profile_id", referencedColumnName = "id")
+    private UserProfile userProfile;
+
+    @OneToMany(mappedBy = "user")
+    private Set<UserCollege> bookmarkedColleges;
+
+    @ManyToOne
+    @JoinColumn(name="counselor_id")
+    private Counselor counselor;
+
+    @OneToMany(mappedBy = "user")
+    private List<Application> applications;
+
     // Getters and Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -57,4 +99,35 @@ public class User {
         this.password = password;
     }
 
+    public UserProfile getUserProfile() {
+        return userProfile;
+    }
+
+    public void setUserProfile(UserProfile userProfile) {
+        this.userProfile = userProfile;
+    }
+
+    public Set<UserCollege> getBookmarkedColleges() {
+        return bookmarkedColleges;
+    }
+
+    public void setBookmarkedColleges(Set<UserCollege> bookmarkedColleges) {
+        this.bookmarkedColleges = bookmarkedColleges;
+    }
+
+    public Counselor getCounselor() {
+        return counselor;
+    }
+
+    public void setCounselor(Counselor counselor) {
+        this.counselor = counselor;
+    }
+
+    public List<Application> getApplications() {
+        return applications;
+    }
+
+    public void setApplications(List<Application> applications) {
+        this.applications = applications;
+    }
 }

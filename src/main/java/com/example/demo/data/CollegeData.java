@@ -14,7 +14,7 @@ import java.util.Map;
 @Component
 public class CollegeData {
 
-    private Map<String, List<College>> colleges;
+    private List<College> colleges;
 
     @PostConstruct
     public void init() {
@@ -22,13 +22,21 @@ public class CollegeData {
         TypeReference<Map<String, List<College>>> typeReference = new TypeReference<>() {};
         InputStream inputStream = TypeReference.class.getResourceAsStream("/colleges.json");
         try {
-            colleges = mapper.readValue(inputStream, typeReference);
+            Map<String, List<College>> collegeMap = mapper.readValue(inputStream, typeReference);
+            colleges = collegeMap.get("colleges");
         } catch (IOException e) {
             System.out.println("Unable to read colleges: " + e.getMessage());
         }
     }
 
-    public List<College> getColleges(String exam) {
-        return colleges.get(exam);
+    public List<College> getColleges() {
+        return colleges;
+    }
+
+    public College findCollegeById(String id) {
+        return colleges.stream()
+                .filter(college -> college.getId().equals(id))
+                .findFirst()
+                .orElse(null);
     }
 }

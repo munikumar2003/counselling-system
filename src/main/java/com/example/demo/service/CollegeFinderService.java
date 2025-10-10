@@ -20,18 +20,19 @@ public class CollegeFinderService {
     }
 
     public List<College> findColleges(CollegeFinderRequest request) {
-        List<College> colleges = collegeData.getColleges(request.getExam());
+        List<College> colleges = collegeData.getColleges();
         if (colleges == null) {
             return Collections.emptyList();
         }
 
         return colleges.stream()
+                .filter(college -> college.getCutoffs().containsKey(request.getExam()))
                 .filter(college -> request.getSelectedBranches().stream()
                         .anyMatch(branch -> {
                             if (!college.getBranches().contains(branch)) {
                                 return false;
                             }
-                            Double cutoff = college.getCutoffs().get(branch).get(request.getCategory());
+                            Double cutoff = college.getCutoffs().get(request.getExam()).get(request.getCategory());
                             if (cutoff == null) {
                                 return false;
                             }

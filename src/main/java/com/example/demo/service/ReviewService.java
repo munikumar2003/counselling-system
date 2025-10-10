@@ -21,7 +21,7 @@ public class ReviewService {
             return reviewData.getReviews();
         }
         return reviewData.getReviews().stream()
-                .filter(review -> review.getCollege().equals(college))
+                .filter(review -> review.getCollege().getId().equals(college))
                 .collect(Collectors.toList());
     }
 
