@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1",
+    "name": "Dr. Rajesh Kumar",
+    "title": "Senior Educational Counsellor",
+    "experience": "15+ years",
+    "specialization": ["JEE Main", "JEE Advanced", "Engineering Counselling"],
+    "rating": 4.9,
+    "reviews": 245,
+    "price_per_hour": 2000,
+    "availability": ["Monday", "Tuesday", "Wednesday", "Friday"],
+    "image": "https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=300",
+    "bio": "Former IIT professor with extensive experience in engineering counselling and career guidance.",
+    "achievements": ["IIT Delhi Alumni", "500+ Students Placed", "Published Author"]
+  },
+  {
+    "id": "2",
+    "name": "Dr. Priya Sharma",
+    "title": "Medical Counselling Expert",
+    "experience": "12+ years",
+    "specialization": ["NEET", "Medical Counselling", "MBBS Admission"],
+    "rating": 4.8,
+    "reviews": 189,
+    "price_per_hour": 1800,
+    "availability": ["Tuesday", "Thursday", "Saturday", "Sunday"],
+    "image": "https://images.pexels.com/photos/5327921/pexels-photo-5327921.jpeg?auto=compress&cs=tinysrgb&w=300",
+    "bio": "Medical professional turned counsellor, helping students navigate medical college admissions.",
+    "achievements": ["AIIMS Alumni", "Medical Council Member", "300+ NEET Selections"]
+  },
+  {
+    "id": "3",
+    "name": "Prof. Amit Patel",
+    "title": "MBA Admission Specialist",
+    "experience": "10+ years",
+    "specialization": ["CAT", "MBA Counselling", "IIM Preparation"],
+    "rating": 4.7,
+    "reviews": 156,
+    "price_per_hour": 2500,
+    "availability": ["Monday", "Wednesday", "Friday", "Saturday"],
+    "image": "https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=300",
+    "bio": "IIM graduate with corporate experience, specializing in MBA admissions and career transitions.",
+    "achievements": ["IIM Ahmedabad Alumni", "Fortune 500 Experience", "200+ MBA Admissions"]
+  },
+  {
+    "id": "4",
+    "name": "Dr. Sneha Reddy",
+    "title": "GATE & M.Tech Counsellor",
+    "experience": "8+ years",
+    "specialization": ["GATE", "M.Tech Admission", "Research Guidance"],
+    "rating": 4.6,
+    "reviews": 98,
+    "price_per_hour": 1500,
+    "availability": ["Tuesday", "Thursday", "Friday", "Sunday"],
+    "image": "https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=300",
+    "bio": "PhD holder with research experience, guiding students for higher studies and research careers.",
+    "achievements": ["PhD from IISc", "Research Publications", "150+ M.Tech Admissions"]
+  }
+]

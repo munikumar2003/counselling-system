@@ -1,0 +1,128 @@
+[
+  {
+    "id": "1",
+    "name": "Rahul Sharma",
+    "college": "IIT Delhi",
+    "branch": "Computer Science Engineering",
+    "graduation_year": "2018",
+    "current_position": "Senior Software Engineer",
+    "company": "Google",
+    "location": "Bangalore, India",
+    "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300",
+    "story": "Started my journey at IIT Delhi with a dream to work at a top tech company. Through consistent hard work, coding practice, and leveraging the excellent placement opportunities at IIT, I landed my dream job at Google.",
+    "achievements": [
+      "Google Software Engineer",
+      "Published 5 Research Papers",
+      "Mentored 50+ Students"
+    ],
+    "advice": "Focus on building strong fundamentals in programming and mathematics. Participate in coding competitions and contribute to open source projects. The IIT tag opens doors, but your skills determine how far you go.",
+    "linkedin": "https://linkedin.com/in/rahulsharma",
+    "email": "rahul.sharma@example.com",
+    "rating": 4.9
+  },
+  {
+    "id": "2",
+    "name": "Priya Patel",
+    "college": "AIIMS Delhi",
+    "branch": "MBBS",
+    "graduation_year": "2019",
+    "current_position": "Resident Doctor",
+    "company": "AIIMS Delhi",
+    "location": "New Delhi, India",
+    "image": "https://images.pexels.com/photos/5327921/pexels-photo-5327921.jpeg?auto=compress&cs=tinysrgb&w=300",
+    "story": "My journey to AIIMS was challenging but rewarding. After clearing NEET with a top rank, I chose AIIMS Delhi for its excellent clinical exposure and research opportunities. Currently pursuing my specialization in Cardiology.",
+    "achievements": [
+      "NEET AIR 45",
+      "Published Medical Research",
+      "Community Health Volunteer"
+    ],
+    "advice": "NEET preparation requires dedication and consistent study. Focus on NCERT books and practice previous year questions. AIIMS provides the best medical education in India - make the most of every opportunity.",
+    "linkedin": "https://linkedin.com/in/priyapatel",
+    "email": "priya.patel@example.com",
+    "rating": 4.8
+  },
+  {
+    "id": "3",
+    "name": "Arjun Kumar",
+    "college": "IIM Ahmedabad",
+    "branch": "MBA",
+    "graduation_year": "2020",
+    "current_position": "Product Manager",
+    "company": "Amazon",
+    "location": "Seattle, USA",
+    "image": "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300",
+    "story": "After working as an engineer for 3 years, I decided to pursue MBA from IIM Ahmedabad. The rigorous curriculum and case study method prepared me well for the corporate world. Now working as a Product Manager at Amazon.",
+    "achievements": [
+      "CAT 99.8 Percentile",
+      "Amazon Product Manager",
+      "Led 10+ Product Launches"
+    ],
+    "advice": "CAT preparation requires strategic planning and consistent practice. Focus on time management and accuracy. IIM Ahmedabad offers unparalleled opportunities - network well and make lifelong connections.",
+    "linkedin": "https://linkedin.com/in/arjunkumar",
+    "email": "arjun.kumar@example.com",
+    "rating": 4.7
+  },
+  {
+    "id": "4",
+    "name": "Sneha Reddy",
+    "college": "NIT Trichy",
+    "branch": "Electronics and Communication",
+    "graduation_year": "2017",
+    "current_position": "Senior Hardware Engineer",
+    "company": "Intel",
+    "location": "Bangalore, India",
+    "image": "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=300",
+    "story": "NIT Trichy provided me with excellent technical foundation and industry exposure. Started with internships at top companies and gradually built my expertise in hardware design. Currently working on cutting-edge processor technologies at Intel.",
+    "achievements": [
+      "Intel Senior Engineer",
+      "3 Patents Filed",
+      "IEEE Conference Speaker"
+    ],
+    "advice": "NITs offer great opportunities for both higher studies and placements. Focus on practical projects and internships. Build a strong network with seniors and alumni - they are always willing to help.",
+    "linkedin": "https://linkedin.com/in/snehareddy",
+    "email": "sneha.reddy@example.com",
+    "rating": 4.6
+  },
+  {
+    "id": "5",
+    "name": "Vikash Singh",
+    "college": "BITS Pilani",
+    "branch": "Computer Science Engineering",
+    "graduation_year": "2019",
+    "current_position": "Data Scientist",
+    "company": "Microsoft",
+    "location": "Hyderabad, India",
+    "image": "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=300",
+    "story": "BITS Pilani's flexible curriculum allowed me to explore various fields. I developed interest in machine learning and data science through electives and projects. The no-reservation policy ensured merit-based environment.",
+    "achievements": [
+      "Microsoft Data Scientist",
+      "Kaggle Expert",
+      "AI Research Publications"
+    ],
+    "advice": "BITS offers great flexibility in choosing courses. Explore different fields and find your passion. The campus culture is amazing - participate in fests and technical events. Build projects and showcase your skills.",
+    "linkedin": "https://linkedin.com/in/vikashsingh",
+    "email": "vikash.singh@example.com",
+    "rating": 4.5
+  },
+  {
+    "id": "6",
+    "name": "Ananya Gupta",
+    "college": "VIT Vellore",
+    "branch": "Information Technology",
+    "graduation_year": "2020",
+    "current_position": "Software Developer",
+    "company": "Flipkart",
+    "location": "Bangalore, India",
+    "image": "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=300",
+    "story": "VIT provided me with modern infrastructure and industry-relevant curriculum. The diverse student community and international exposure helped me grow personally and professionally. Secured placement at Flipkart through campus recruitment.",
+    "achievements": [
+      "Flipkart Software Developer",
+      "Hackathon Winner",
+      "Open Source Contributor"
+    ],
+    "advice": "VIT has excellent placement opportunities and modern facilities. Focus on coding skills and participate in hackathons. The faculty is supportive - don't hesitate to seek guidance for projects and career advice.",
+    "linkedin": "https://linkedin.com/in/ananyagupta",
+    "email": "ananya.gupta@example.com",
+    "rating": 4.4
+  }
+]

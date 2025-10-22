@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "mentor_id": "1",
+    "date": "2024-04-15",
+    "time": "10:00 AM",
+    "duration": 60,
+    "type": "video",
+    "status": "upcoming"
+  },
+  {
+    "id": "2",
+    "mentor_id": "2",
+    "date": "2024-04-10",
+    "time": "2:00 PM",
+    "duration": 45,
+    "type": "chat",
+    "status": "completed"
+  }
+]
