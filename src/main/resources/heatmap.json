@@ -1,0 +1,12 @@
+[
+  { "branch": "Computer Science", "general": 45, "obc": 125, "sc": 285, "st": 445, "ews": 78 },
+  { "branch": "Electrical Engineering", "general": 156, "obc": 298, "sc": 567, "st": 789, "ews": 234 },
+  { "branch": "Mechanical Engineering", "general": 234, "obc": 445, "sc": 678, "st": 890, "ews": 345 },
+  { "branch": "Civil Engineering", "general": 445, "obc": 678, "sc": 890, "st": 1234, "ews": 567 },
+  { "branch": "Chemical Engineering", "general": 345, "obc": 567, "sc": 789, "st": 1123, "ews": 456 },
+  { "branch": "Aerospace Engineering", "general": 567, "obc": 789, "sc": 1123, "st": 1456, "ews": 678 },
+  { "branch": "Biotechnology", "general": 789, "obc": 1123, "sc": 1456, "st": 1789, "ews": 890 },
+  { "branch": "Metallurgy", "general": 890, "obc": 1234, "sc": 1567, "st": 1890, "ews": 1123 },
+  { "branch": "Engineering Physics", "general": 678, "obc": 890, "sc": 1234, "st": 1567, "ews": 789 },
+  { "branch": "Production Engineering", "general": 1123, "obc": 1456, "sc": 1789, "st": 2123, "ews": 1234 }
+]

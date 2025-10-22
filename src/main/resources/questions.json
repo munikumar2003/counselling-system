@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "title": "What is the minimum JEE Main percentile required for NIT admission?",
+    "content": "I scored 92 percentile in JEE Main and belong to OBC category. Can I get admission in any NIT for Computer Science?",
+    "author": "Rahul Kumar",
+    "category": "JEE Main",
+    "tags": ["JEE Main", "NIT", "Cutoff", "OBC"],
+    "upvotes": 15,
+    "answers": 3,
+    "date": "2024-03-20",
+    "answered": true
+  },
+  {
+    "id": "2",
+    "title": "NEET counselling process - State quota vs All India quota",
+    "content": "Can someone explain the difference between state quota and all India quota in NEET counselling? Which one should I choose?",
+    "author": "Priya Sharma",
+    "category": "NEET",
+    "tags": ["NEET", "Counselling", "State Quota", "AIQ"],
+    "upvotes": 22,
+    "answers": 5,
+    "date": "2024-03-18",
+    "answered": true
+  },
+  {
+    "id": "3",
+    "title": "Is it worth taking a drop year for JEE preparation?",
+    "content": "I got 85 percentile in JEE Main this year. Should I take a drop year to prepare again or join a decent college?",
+    "author": "Arjun Patel",
+    "category": "JEE Main",
+    "tags": ["JEE Main", "Drop Year", "Career Advice"],
+    "upvotes": 8,
+    "answers": 2,
+    "date": "2024-03-15",
+    "answered": false
+  },
+  {
+    "id": "4",
+    "title": "GATE score vs College selection for M.Tech",
+    "content": "I have a GATE score of 650. Which IITs/NITs can I target for M.Tech in Computer Science?",
+    "author": "Sneha Reddy",
+    "category": "GATE",
+    "tags": ["GATE", "M.Tech", "IIT", "NIT"],
+    "upvotes": 12,
+    "answers": 4,
+    "date": "2024-03-12",
+    "answered": true
+  },
+  {
+    "id": "5",
+    "title": "CAT percentile vs IIM admission chances",
+    "content": "What CAT percentile is required for top IIMs? I have 2 years work experience.",
+    "author": "Vikash Singh",
+    "category": "CAT",
+    "tags": ["CAT", "IIM", "MBA", "Work Experience"],
+    "upvotes": 18,
+    "answers": 6,
+    "date": "2024-03-10",
+    "answered": true
+  }
+]
