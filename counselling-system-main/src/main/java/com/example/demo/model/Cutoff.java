@@ -20,6 +20,9 @@ public class Cutoff {
     private Double st;
     private Double ews;
 
+    @Column(name = "hs")
+    private boolean hs;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "college_id")
     @JsonBackReference
@@ -47,6 +50,9 @@ public class Cutoff {
 
     public Double getEws() { return ews;}
     public void setEws(Double ews) { this.ews = ews;}
+
+    public boolean isHs() { return hs; }
+    public void setHs(boolean hs) { this.hs = hs; }
 
     public JeeMainsCollege getCollege() { return college;}
     public void setCollege(JeeMainsCollege college) { this.college = college;}

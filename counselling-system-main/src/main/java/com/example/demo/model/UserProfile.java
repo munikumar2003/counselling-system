@@ -29,9 +29,6 @@ public class UserProfile {
     private String parentName;
     private String parentPhone;
 
-//    @OneToOne(mappedBy = "userProfile")
-//    private User user;
-
 
     @OneToOne
     @JoinColumn(name = "user_id")

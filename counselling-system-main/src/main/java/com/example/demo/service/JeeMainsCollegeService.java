@@ -1,99 +1,10 @@
-//package com.example.demo.service;
-//
-//import com.example.demo.model.*;
-//import com.example.demo.repository.JeeMainsCollegeRepository;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Service;
-//
-//import java.util.*;
-//
-//@Service
-//public class JeeMainsCollegeService {
-//
-//    @Autowired
-//    private JeeMainsCollegeRepository repo;
-//
-//    public List<JeeMainsCollege> getEligibleColleges(CollegeFilterRequest req) {
-//        List<JeeMainsCollege> allColleges = repo.findAll();
-//        List<JeeMainsCollege> eligibleColleges = new ArrayList<>();
-//
-//        for (JeeMainsCollege college : allColleges) {
-//            List<Cutoff> cutoffs = college.getCutoffs();
-//            List<String> eligibleBranches = new ArrayList<>();
-//
-//            // Filter branches based on eligibility
-//            for (String requestedBranch : req.getSelectedBranches()) {
-//                for (Cutoff cutoff : cutoffs) {
-//                    if (cutoff.getBranchName().equalsIgnoreCase(requestedBranch)) {
-//                        Double categoryCutoff = getCategoryCutoffValue(cutoff, req.getCategory().toLowerCase());
-//                        if (categoryCutoff != null && req.getScore() >= categoryCutoff) {
-//                            eligibleBranches.add(requestedBranch);
-//                            break;
-//                        }
-//                    }
-//                }
-//            }
-//
-//            if (!eligibleBranches.isEmpty()) {
-//                JeeMainsCollege eligibleCollege = new JeeMainsCollege();
-//                eligibleCollege.setId(college.getId());
-//                eligibleCollege.setName(college.getName());
-//                eligibleCollege.setLocation(college.getLocation());
-//                eligibleCollege.setType(college.getType());
-//                eligibleCollege.setRating(college.getRating());
-//                eligibleCollege.setFees(college.getFees());
-//
-//                // Set eligible branches as Branch entities
-//                List<Branch> filteredBranches = new ArrayList<>();
-//                for (Branch branch : college.getBranches()) {
-//                    if (eligibleBranches.contains(branch.getBranchName())) {
-//                        filteredBranches.add(branch);
-//                    }
-//                }
-//                eligibleCollege.setBranches(filteredBranches);
-//
-//                // Set filtered cutoffs
-//                List<Cutoff> filteredCutoffs = new ArrayList<>();
-//                for (Cutoff cutoff : cutoffs) {
-//                    if (eligibleBranches.contains(cutoff.getBranchName())) {
-//                        filteredCutoffs.add(cutoff);
-//                    }
-//                }
-//                eligibleCollege.setCutoffs(filteredCutoffs);
-//
-//                eligibleCollege.setNirfRanking(college.getNirfRanking());
-//                eligibleCollege.setEstablished(college.getEstablished());
-//                eligibleCollege.setSeats(college.getSeats());
-//                eligibleCollege.setHighlights(college.getHighlights());
-//                eligibleCollege.setPopularityScore(college.getPopularityScore());
-//
-//                eligibleColleges.add(eligibleCollege);
-//            }
-//        }
-//
-//        return eligibleColleges;
-//    }
-//
-//    // Helper method to obtain cutoff value based on category
-//    private Double getCategoryCutoffValue(Cutoff cutoff, String category) {
-//        return switch (category) {
-//            case "general" -> cutoff.getGeneral();
-//            case "obc" -> cutoff.getObc();
-//            case "sc" -> cutoff.getSc();
-//            case "st" -> cutoff.getSt();
-//            case "ews" -> cutoff.getEws();
-//            default -> null;
-//        };
-//    }
-//}
-
-
 package com.example.demo.service;
 
 import com.example.demo.model.CutoffDetails;
 import com.example.demo.model.JeeMainsCollegeDto;
 import com.example.demo.model.*;
 import com.example.demo.repository.JeeMainsCollegeRepository;
+import com.example.demo.repository.UserProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -106,7 +17,15 @@ public class JeeMainsCollegeService {
     @Autowired
     private JeeMainsCollegeRepository repo;
 
+    @Autowired
+    private UserProfileRepository userProfileRepo;
+
     public List<JeeMainsCollegeDto> getEligibleColleges(CollegeFilterRequest req) {
+        System.out.println(req.getUserId());
+        UserProfile userProfile = userProfileRepo.findByUserId(req.getUserId());
+        String userState = (userProfile != null) ? userProfile.getState() : null;
+        System.out.println(userState);
+
         List<JeeMainsCollege> allColleges = repo.findAll();
         List<JeeMainsCollegeDto> eligibleColleges = new ArrayList<>();
 
@@ -118,13 +37,14 @@ public class JeeMainsCollegeService {
 
             for (String requestedBranch : req.getSelectedBranches()) {
                 Optional<Cutoff> matchingCutoff = cutoffs.stream()
-                        .filter(cutoff -> cutoff.getBranchName().equalsIgnoreCase(requestedBranch))
+                        .filter(cutoff -> cutoff.getBranchName().equalsIgnoreCase(requestedBranch)
+                                && cutoff.isHs() == req.isHomeState()) // ✅ match based on Home State
                         .findFirst();
 
                 if (matchingCutoff.isPresent()) {
                     Double categoryCutoff = getCategoryCutoffValue(matchingCutoff.get(), req.getCategory().toLowerCase());
-                    System.out.println(req.getScore()+" "+categoryCutoff);
-                    if (categoryCutoff != null && req.getScore() >= categoryCutoff) {
+                    //System.out.println(req.getScore()+" "+categoryCutoff);
+                    if (categoryCutoff != null && req.getScore() <= categoryCutoff) {
                         eligibleBranches.add(requestedBranch);
                     }
                 }
