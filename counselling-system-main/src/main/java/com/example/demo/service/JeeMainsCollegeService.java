@@ -20,6 +20,85 @@ public class JeeMainsCollegeService {
     @Autowired
     private UserProfileRepository userProfileRepo;
 
+//    public List<JeeMainsCollegeDto> getEligibleColleges(CollegeFilterRequest req) {
+//        System.out.println(req.getUserId());
+//        UserProfile userProfile = userProfileRepo.findByUserId(req.getUserId());
+//        String userState = (userProfile != null) ? userProfile.getState() : null;
+//        System.out.println(userState);
+//
+//        List<JeeMainsCollege> allColleges = repo.findAll();
+//        List<JeeMainsCollegeDto> eligibleColleges = new ArrayList<>();
+//
+//        for (JeeMainsCollege college : allColleges) {
+//            List<Cutoff> cutoffs = college.getCutoffs();
+//            List<String> eligibleBranches = new ArrayList<>();
+//
+//            //List<String> eligibleBranches = new ArrayList<>();
+//
+//            for (String requestedBranch : req.getSelectedBranches()) {
+//                Optional<Cutoff> matchingCutoff = cutoffs.stream()
+//                        .filter(cutoff -> cutoff.getBranchName().equalsIgnoreCase(requestedBranch)
+//                                && cutoff.isHs() == req.isHomeState()) // ✅ match based on Home State
+//                        .findFirst();
+//
+//                if (matchingCutoff.isPresent()) {
+//                    Double categoryCutoff = getCategoryCutoffValue(matchingCutoff.get(), req.getCategory().toLowerCase());
+//                    //System.out.println(req.getScore()+" "+categoryCutoff);
+//                    if (categoryCutoff != null && req.getScore() <= categoryCutoff) {
+//                        eligibleBranches.add(requestedBranch);
+//                    }
+//                }
+//            }
+//
+//
+//            if (!eligibleBranches.isEmpty()) {
+//                JeeMainsCollegeDto dto = new JeeMainsCollegeDto();
+//
+//                dto.setId(college.getId());
+//                dto.setName(college.getName());
+//                dto.setLocation(college.getLocation());
+//                dto.setType(college.getType());
+//                dto.setRating(college.getRating());
+//                dto.setFees(college.getFees());
+//                dto.setNirfRanking(college.getNirfRanking());
+//                dto.setEstablished(college.getEstablished());
+//                dto.setSeats(college.getSeats());
+//                dto.setPopularityScore(college.getPopularityScore());
+//
+//                // Branches as List<String>
+//                List<String> branchNames = college.getBranches().stream()
+//                        .filter(b -> eligibleBranches.contains(b.getBranchName()))
+//                        .map(Branch::getBranchName)
+//                        .collect(Collectors.toList());
+//                dto.setBranches(branchNames);
+//
+//                // Cutoffs as Map<String, CutoffDetails>
+//                Map<String, CutoffDetails> cutoffMap = new HashMap<>();
+//                for (Cutoff cutoff : cutoffs) {
+//                    if (eligibleBranches.contains(cutoff.getBranchName())) {
+//                        CutoffDetails details = new CutoffDetails();
+//                        details.setGeneral(cutoff.getGeneral());
+//                        details.setObc(cutoff.getObc());
+//                        details.setSc(cutoff.getSc());
+//                        details.setSt(cutoff.getSt());
+//                        details.setEws(cutoff.getEws());
+//                        cutoffMap.put(cutoff.getBranchName(), details);
+//                    }
+//                }
+//                dto.setCutoffs(cutoffMap);
+//
+//                // Highlights as List<String>
+//                List<String> highlightStrings = college.getHighlights().stream()
+//                        .map(Highlight::getHighlight)
+//                        .collect(Collectors.toList());
+//                dto.setHighlights(highlightStrings);
+//
+//                eligibleColleges.add(dto);
+//            }
+//        }
+//        return eligibleColleges;
+//    }
+
     public List<JeeMainsCollegeDto> getEligibleColleges(CollegeFilterRequest req) {
         System.out.println(req.getUserId());
         UserProfile userProfile = userProfileRepo.findByUserId(req.getUserId());
@@ -27,33 +106,41 @@ public class JeeMainsCollegeService {
         System.out.println(userState);
 
         List<JeeMainsCollege> allColleges = repo.findAll();
+
+        // ✅ Filter colleges by location when home state = true
+        List<JeeMainsCollege> filteredColleges;
+        if (req.isHomeState() && userState != null) {
+            filteredColleges = allColleges.stream()
+                    .filter(c -> c.getLocation() != null && c.getLocation().toLowerCase().contains(userState.toLowerCase()))
+                    .collect(Collectors.toList());
+            System.out.println(filteredColleges);
+        } else {
+            System.out.println("output mismatch");
+            filteredColleges = allColleges;
+        }
+
         List<JeeMainsCollegeDto> eligibleColleges = new ArrayList<>();
 
-        for (JeeMainsCollege college : allColleges) {
+        for (JeeMainsCollege college : filteredColleges) {
             List<Cutoff> cutoffs = college.getCutoffs();
             List<String> eligibleBranches = new ArrayList<>();
-
-            //List<String> eligibleBranches = new ArrayList<>();
 
             for (String requestedBranch : req.getSelectedBranches()) {
                 Optional<Cutoff> matchingCutoff = cutoffs.stream()
                         .filter(cutoff -> cutoff.getBranchName().equalsIgnoreCase(requestedBranch)
-                                && cutoff.isHs() == req.isHomeState()) // ✅ match based on Home State
+                                && cutoff.isHs() == req.isHomeState())
                         .findFirst();
 
                 if (matchingCutoff.isPresent()) {
                     Double categoryCutoff = getCategoryCutoffValue(matchingCutoff.get(), req.getCategory().toLowerCase());
-                    //System.out.println(req.getScore()+" "+categoryCutoff);
                     if (categoryCutoff != null && req.getScore() <= categoryCutoff) {
                         eligibleBranches.add(requestedBranch);
                     }
                 }
             }
 
-
             if (!eligibleBranches.isEmpty()) {
                 JeeMainsCollegeDto dto = new JeeMainsCollegeDto();
-
                 dto.setId(college.getId());
                 dto.setName(college.getName());
                 dto.setLocation(college.getLocation());
@@ -65,14 +152,12 @@ public class JeeMainsCollegeService {
                 dto.setSeats(college.getSeats());
                 dto.setPopularityScore(college.getPopularityScore());
 
-                // Branches as List<String>
                 List<String> branchNames = college.getBranches().stream()
                         .filter(b -> eligibleBranches.contains(b.getBranchName()))
                         .map(Branch::getBranchName)
                         .collect(Collectors.toList());
                 dto.setBranches(branchNames);
 
-                // Cutoffs as Map<String, CutoffDetails>
                 Map<String, CutoffDetails> cutoffMap = new HashMap<>();
                 for (Cutoff cutoff : cutoffs) {
                     if (eligibleBranches.contains(cutoff.getBranchName())) {
@@ -87,7 +172,6 @@ public class JeeMainsCollegeService {
                 }
                 dto.setCutoffs(cutoffMap);
 
-                // Highlights as List<String>
                 List<String> highlightStrings = college.getHighlights().stream()
                         .map(Highlight::getHighlight)
                         .collect(Collectors.toList());
