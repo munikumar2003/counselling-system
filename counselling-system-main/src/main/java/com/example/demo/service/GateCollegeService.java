@@ -21,9 +21,6 @@ public class GateCollegeService {
     private UserProfileRepository userProfileRepo;
 
     public List<GateCollegeDto> getEligibleColleges(CollegeFilterRequest req) {
-        UserProfile userProfile = userProfileRepo.findByUserId(req.getUserId());
-        String userState = (userProfile != null) ? userProfile.getState() : null;
-        System.out.println(userState);
 
         List<GateCollege> allColleges = repo.findAll();
         List<GateCollegeDto> eligibleColleges = new ArrayList<>();
@@ -32,11 +29,9 @@ public class GateCollegeService {
             List<CutoffGate> cutoffs = college.getCutoffs();
             List<String> eligibleBranches = new ArrayList<>();
 
-            //List<String> eligibleBranches = new ArrayList<>();
-
             for (String requestedBranch : req.getSelectedBranches()) {
                 Optional<CutoffGate> matchingCutoff = cutoffs.stream()
-                        .filter(cutoff -> cutoff.getBranchName().equalsIgnoreCase(requestedBranch)) // ✅ match based on Home State
+                        .filter(cutoff -> cutoff.getBranchName().equalsIgnoreCase(requestedBranch))
                         .findFirst();
 
                 if (matchingCutoff.isPresent()) {
@@ -63,14 +58,12 @@ public class GateCollegeService {
                 dto.setSeats(college.getSeats());
                 dto.setPopularityScore(college.getPopularityScore());
 
-                // Branches as List<String>
                 List<String> branchNames = college.getBranches().stream()
                         .filter(b -> eligibleBranches.contains(b.getBranchName()))
                         .map(BranchGate::getBranchName)
                         .collect(Collectors.toList());
                 dto.setBranches(branchNames);
 
-                // Cutoffs as Map<String, CutoffDetails>
                 Map<String, CutoffDetails> cutoffMap = new HashMap<>();
                 for (CutoffGate cutoff : cutoffs) {
                     if (eligibleBranches.contains(cutoff.getBranchName())) {
@@ -85,7 +78,6 @@ public class GateCollegeService {
                 }
                 dto.setCutoffs(cutoffMap);
 
-                // Highlights as List<String>
                 List<String> highlightStrings = college.getHighlights().stream()
                         .map(HighlightGate::getHighlight)
                         .collect(Collectors.toList());
