@@ -89,7 +89,7 @@ public class NeetCollegeService {
         return eligibleColleges;
     }
 
-    private Double getCategoryCutoffValue(CutoffGate cutoff, String category) {
+    private Double getCategoryCutoffValue(CutoffNeet cutoff, String category) {
         return switch (category) {
             case "general" -> cutoff.getGeneral();
             case "obc" -> cutoff.getObc();
