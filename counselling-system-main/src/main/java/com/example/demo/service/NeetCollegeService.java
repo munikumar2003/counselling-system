@@ -37,7 +37,7 @@ public class NeetCollegeService {
                 if (matchingCutoff.isPresent()) {
                     Double categoryCutoff = getCategoryCutoffValue(matchingCutoff.get(), req.getCategory().toLowerCase());
                     System.out.println(req.getScore()+" "+categoryCutoff);
-                    if (categoryCutoff != null && req.getScore()>= categoryCutoff) {
+                    if (categoryCutoff != null && req.getScore()<= categoryCutoff) {
                         eligibleBranches.add(requestedBranch);
                     }
                 }

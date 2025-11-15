@@ -8,8 +8,8 @@ import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-@Table(name = "gate_colleges")
-public class GateCollege {
+@Table(name = "cat_colleges")
+public class CatCollege {
 
     @Id
     private String id;
@@ -25,15 +25,15 @@ public class GateCollege {
 
     @OneToMany(mappedBy = "college", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
-    private List<BranchGate> branches;
+    private List<BranchCat> branches;
 
     @OneToMany(mappedBy = "college", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
-    private List<CutoffGate> cutoffs;
+    private List<CutoffCat> cutoffs;
 
     @OneToMany(mappedBy = "college", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
-    private List<HighlightGate> highlights;
+    private List<HighlightCat> highlights;
 
     // Getters and Setters
 
@@ -117,27 +117,27 @@ public class GateCollege {
         this.popularityScore = popularityScore;
     }
 
-    public List<BranchGate> getBranches() {
+    public List<BranchCat> getBranches() {
         return branches;
     }
 
-    public void setBranches(List<BranchGate> branches) {
+    public void setBranches(List<BranchCat> branches) {
         this.branches = branches;
     }
 
-    public List<CutoffGate> getCutoffs() {
+    public List<CutoffCat> getCutoffs() {
         return cutoffs;
     }
 
-    public void setCutoffs(List<CutoffGate> cutoffs) {
+    public void setCutoffs(List<CutoffCat> cutoffs) {
         this.cutoffs = cutoffs;
     }
 
-    public List<HighlightGate> getHighlights() {
+    public List<HighlightCat> getHighlights() {
         return highlights;
     }
 
-    public void setHighlights(List<HighlightGate> highlights) {
+    public void setHighlights(List<HighlightCat> highlights) {
         this.highlights = highlights;
     }
 }
