@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "gate_highlights")
-public class HighlightGate {
+@Table(name = "cat_highlights")
+public class HighlightCat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +17,7 @@ public class HighlightGate {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "college_id")
     @JsonBackReference
-    private GateCollege college;
+    private CatCollege college;
 
     // Getters and Setters
 
@@ -27,8 +27,8 @@ public class HighlightGate {
     public String getHighlight() { return highlight;}
     public void setHighlight(String highlight) { this.highlight = highlight;}
 
-    public GateCollege getCollege() { return college;}
-    public void setCollege(GateCollege college) { this.college = college;}
+    public CatCollege getCollege() { return college;}
+    public void setCollege(CatCollege college) { this.college = college;}
 }
 
 
