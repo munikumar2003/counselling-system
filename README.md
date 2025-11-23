@@ -1,5 +1,11 @@
 <h1>Counselling System</h1>
 
+<h2>Frontend Development Link</h2>
+<p>
+https://github.com/munikumar2003/counselling-system-frontend/
+</p>
+
+
 <h2>📝 Overview</h2>
 <p>
 A web-based counselling management system built using Spring Boot, PostgreSQL, and a modern front-end.<br>
